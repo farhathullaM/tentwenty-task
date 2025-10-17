@@ -1,73 +1,133 @@
-# React + TypeScript + Vite
+🧾 Timesheet Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application with mock API integration, authentication, and timesheet tracking, built using ShadCN UI, React Hook Form, and JSON Server.
+This project demonstrates API integration, reusable components, and form handling using modern React patterns.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Features
 
-## React Compiler
+🔐 Login System (with token storage & “Remember Me” option)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+📅 Weekly Timesheet Overview (view, create, update entries)
 
-## Expanding the ESLint configuration
+⏰ Timesheet Entries per day with work details
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🧩 Reusable UI Components built using ShadCN UI
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+💾 Mock REST API powered by JSON Server
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+🧠 Form Validation using Yup + React Hook Form
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Technology               | Purpose                         |
+| ------------------------ | ------------------------------- |
+| ⚛️ React                 | Frontend UI framework           |
+| 🧱 ShadCN UI             | Component styling               |
+| 📘 TypeScript            | Type safety                     |
+| 📦 JSON Server           | Mock backend API                |
+| 🔐 React Hook Form + Yup | Form handling & validation      |
+| ⚙️ Context API           | Authentication state management |
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+📂 Project Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+src/
+├── components/
+│   ├── common/
+│   │   └── CustomSelect.tsx       # Reusable dropdown select
+│   ├── ui/
+│   │   ├── InputBox.tsx           # Input field component
+│   │   └── checkbox.tsx           # ShadCN checkbox
+│   └── Login/
+│       ├── LoginForm.tsx          # Login form component
+│       └── loginSchema.ts         # Validation schema
+│
+├── context/
+│   └── AuthContext.tsx            # Auth provider and login logic
+│
+├── utils/
+│   ├── formatDateRange.ts         # Format week date range
+│   ├── formatShortDate.ts         # Convert date to "Sept 29"
+│   └── dateRangeOptions.ts        # Dropdown data for date range filter
+│
+└── data/
+    └── db.json                    # JSON Server mock data (users, timesheets)
+
+
+🧑‍💻 Getting Started
+1️⃣ Clone the repository
+
+git clone https://github.com/your-username/timesheet-app.git
+cd timesheet-app
+
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Start the mock API (JSON Server)
+npx json-server --watch data/db.json --port 5000
+
+4️⃣ Start the React app
+npm run dev
+
+
+🔑 Authentication Flow
+
+User credentials are validated against mock users data in db.json
+
+A token is generated (base64 encoded)
+
+Token and user data are stored in sessionStorage
+
+useAuth() hook provides user, login(), and logout() across the app
+
+📊 Mock Data Example
+
+Users
+{
+  "id": 1,
+  "email": "john@gmail.com",
+  "password": "1234",
+  "name": "John Doe",
+  "token": "am9obkBnbWFpbC5jb206MTIzNA=="
+}
+
+Timesheets
+{
+  "id": 1,
+  "week": "2025-W40",
+  "userId": 1,
+  "totalHours": 38,
+  "dateAssigned": "2025-09-30",
+  "deadlineDate": "2025-10-06",
+  "status": "completed"
+}
+
+
+💡 Reusable Components
+
+CustomSelect — Dropdown built with ShadCN UI
+
+InputBox — Controlled input for forms
+
+Checkbox — ShadCN checkbox integrated with React Hook Form
+
+🧰 Utility Functions
+| Function                      | Description                                    |
+| ----------------------------- | ---------------------------------------------- |
+| `formatDateRange(start, end)` | Converts two dates into a readable week range  |
+| `formatShortDate(date)`       | Converts `"2025-09-29"` → `"Sept 29"`          |
+| `dateRangeOptions`            | Provides list of predefined date range options |
+
+
+🧑‍🏫 Future Improvements
+
+✅ Integrate NextAuth or JWT-based login
+
+✅ Connect with a real backend
+
+✅ Add role-based access (Admin/User)
+
+✅ Add dark mode using ShadCN Theme
+
+🧡 Author
+Farhathulla Menayath

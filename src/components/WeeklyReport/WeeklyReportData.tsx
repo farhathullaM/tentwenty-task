@@ -5,6 +5,7 @@ import AddTaskButton from "../Button/AddTaskButton";
 import { formatShortDate } from "../../utils/formatDate";
 import type { WeeklyDataType } from "../types/weeklyDataType";
 import HoverComponent from "../ui/HoverComponent";
+import EditDelete from "../Button/EditDelete";
 
 type workType = {
   task: string;
@@ -14,7 +15,7 @@ type workType = {
 
 const WeeklyReportData = ({ weeklyData }: WeeklyDataType) => {
   return (
-    <div className="flex gap-5 p-2 select-none">
+    <div className="flex gap-5 p-2 select-none max-md:flex-col">
       <span className="text-[#111928] font-semibold w-32 text-lg">
         {formatShortDate(weeklyData.date)}
       </span>
@@ -24,20 +25,15 @@ const WeeklyReportData = ({ weeklyData }: WeeklyDataType) => {
           <div className="flex justify-between border-2 border-[#E5E7EB] rounded-md p-2">
             <span className="text-[#111928] font-medium">{work.task}</span>
             <div className="flex gap-2 items-center">
-              <span className="text-[#9CA3AF] font-medium">
+              <span className="text-[#9CA3AF] font-medium text-nowrap">
                 {work.hours} hrs
               </span>
-              <span className="text-[#1E429F] bg-[#E1EFFE] rounded-md px-2 py-1 text-sm font-medium">
+              <span className="text-[#1E429F] text-nowrap bg-[#E1EFFE] rounded-md px-2 py-1 text-sm font-medium">
                 {work.project}
               </span>
               <HoverComponent
                 trigger={<Ellipsis className="text-[#6B7280]" />}
-                children={
-                  <div className="flex items-center flex-col gap-2 ">
-                    <span className="text-[#374151] hover:bg-gray-50 w-full py-2 text-center">Edit</span>
-                    <span className="text-[#E02424] w-full text-center hover:bg-gray-50 py-2">Delete</span>
-                  </div>
-                }
+                children={<EditDelete />}
               />
             </div>
           </div>

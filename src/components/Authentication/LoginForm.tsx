@@ -10,7 +10,7 @@ import type { LoginType } from "../../constants/types";
 
 const LoginForm = () => {
   const { user, login, loading } = useAuth();
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
@@ -28,7 +28,7 @@ const LoginForm = () => {
 
   return (
     <form
-      onClick={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(onSubmit)}
       className="flex flex-col items-center h-screen  justify-center w-full px-20 max-lg:px-16 gap-3 max-md:px-8 max-sm:px-4 max-md:h-[50vh]"
     >
       <div className="flex flex-col gap-3 w-full">
@@ -56,9 +56,14 @@ const LoginForm = () => {
           />
         </div>
 
-        <div>
-          <Checkbox checked={checked} onChange={() => setChecked(!checked)} />
-          <span>Remember me</span>
+        <div className="flex items-center gap-2">
+          <Checkbox
+            checked={checked}
+            onCheckedChange={() => setChecked(!checked)}
+          />
+          <span className="text-[#6B7280] text-sm font-medium">
+            Remember me
+          </span>
         </div>
         <input
           type="submit"

@@ -111,14 +111,14 @@ const TimeSheet = () => {
         </TableBody>
       </Table>
 
-      <div className="w-full flex justify-between items-center">
+      <div className="w-full flex justify-between items-center max-md:flex-col max-md:gap-3 max-md:justify-start">
         <CustomSelect
           value={limit}
           options={pageOptions}
           onChange={setLimit}
           placeholder="5 per page"
         />
-        <Pagination limit={10} page={page} onPageChange={setPage} total={100} />
+        <Pagination limit={20} page={page} onPageChange={setPage} total={100} />
       </div>
     </div>
   );

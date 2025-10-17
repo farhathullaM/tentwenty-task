@@ -13,7 +13,7 @@ const WeeklySheet = () => {
   console.log(data);
 
   return (
-    <div className="bg-white w-[90vw] rounded-md shadow-sm mt-5 flex px-5 py-5 flex-col h-fit gap-5">
+    <div className="bg-white w-[90vw] rounded-md shadow-sm mt-5 flex p-5 flex-col h-fit gap-5 max-md:p-3 max-md:mt-0">
       <div className="flex justify-between items-center">
         <h3 className="text-[#111928] text-xl font-semibold">
           This Weeks Timesheet

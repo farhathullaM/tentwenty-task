@@ -83,6 +83,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
         toast.success("Login successful");
         navigate("/");
+        window.location.reload();
       } else {
         toast.error("Invalid credentials");
       }
