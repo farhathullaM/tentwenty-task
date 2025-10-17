@@ -1,0 +1,202 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "john@gmail.com",
+      "password": "1234",
+      "name": "John Doe",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "email": "jane@gmail.com",
+      "password": "abcd",
+      "name": "Jane Smith",
+      "role": "user"
+    }
+  ],
+  "timesheets": [
+    {
+      "id": 1,
+      "week": "2025-W40",
+      "userId": 1,
+      "totalHours": 38,
+      "dateAssigned": "2025-09-30",
+      "deadlineDate": "2025-10-06",
+      "status": "completed"
+    },
+    {
+      "id": 2,
+      "week": "2025-W41",
+      "userId": 1,
+      "totalHours": 42,
+      "dateAssigned": "2025-10-07",
+      "deadlineDate": "2025-10-13",
+      "status": "incomplete"
+    },
+    {
+      "id": 3,
+      "week": "2025-W41",
+      "userId": 2,
+      "totalHours": 36,
+      "dateAssigned": "2025-10-07",
+      "deadlineDate": "2025-10-13",
+      "status": "missing"
+    },
+    {
+      "id": 4,
+      "week": "2025-W40",
+      "userId": 1,
+      "totalHours": 38,
+      "dateAssigned": "2025-09-30",
+      "deadlineDate": "2025-10-06",
+      "status": "completed"
+    },
+    {
+      "id": 5,
+      "week": "2025-W41",
+      "userId": 1,
+      "totalHours": 42,
+      "dateAssigned": "2025-10-07",
+      "deadlineDate": "2025-10-13",
+      "status": "incomplete"
+    },
+    {
+      "id": 6,
+      "week": "2025-W41",
+      "userId": 2,
+      "totalHours": 36,
+      "dateAssigned": "2025-10-07",
+      "deadlineDate": "2025-10-13",
+      "status": "missing"
+    }
+  ],
+  "entries": [
+    {
+      "date": "2025-09-29",
+      "day": "Monday",
+      "work": [
+        {
+          "task": "UI Design for Dashboard",
+          "project": "Project Alpha",
+          "hours": 4
+        },
+        {
+          "task": "API Integration for Login",
+          "project": "Project Alpha",
+          "hours": 3
+        }
+      ]
+    },
+    {
+      "date": "2025-09-30",
+      "day": "Tuesday",
+      "work": [
+        {
+          "task": "Fix Navigation Bug",
+          "project": "Project Alpha",
+          "hours": 2
+        },
+        {
+          "task": "Implement Notifications",
+          "project": "Project Beta",
+          "hours": 5
+        }
+      ]
+    },
+    {
+      "date": "2025-10-01",
+      "day": "Wednesday",
+      "work": [
+        {
+          "task": "Database Optimization",
+          "project": "Project Beta",
+          "hours": 4
+        },
+        { "task": "Code Review", "project": "Project Alpha", "hours": 3 }
+      ]
+    },
+    {
+      "date": "2025-10-02",
+      "day": "Thursday",
+      "work": [
+        { "task": "Frontend Testing", "project": "Project Alpha", "hours": 6 }
+      ]
+    },
+    {
+      "date": "2025-10-03",
+      "day": "Friday",
+      "work": [
+        {
+          "task": "Write Documentation",
+          "project": "Project Beta",
+          "hours": 3
+        },
+        { "task": "Team Meeting", "project": "Internal", "hours": 2 }
+      ]
+    },
+    {
+      "date": "2025-10-04",
+      "day": "Saturday",
+      "work": [{ "task": "Bug Fixing", "project": "Project Alpha", "hours": 4 }]
+    },
+    {
+      "date": "2025-10-05",
+      "day": "Sunday",
+      "work": []
+    },
+    {
+      "date": "2025-10-06",
+      "day": "Monday",
+      "work": [
+        { "task": "Feature Planning", "project": "Project Gamma", "hours": 3 },
+        { "task": "API Setup", "project": "Project Gamma", "hours": 4 }
+      ]
+    },
+    {
+      "date": "2025-10-07",
+      "day": "Tuesday",
+      "work": [
+        {
+          "task": "Frontend Integration",
+          "project": "Project Gamma",
+          "hours": 5
+        }
+      ]
+    },
+    {
+      "date": "2025-10-08",
+      "day": "Wednesday",
+      "work": [
+        { "task": "Testing and QA", "project": "Project Beta", "hours": 6 }
+      ]
+    },
+    {
+      "date": "2025-10-09",
+      "day": "Thursday",
+      "work": [
+        { "task": "Deployment Setup", "project": "Project Gamma", "hours": 4 }
+      ]
+    },
+    {
+      "date": "2025-10-10",
+      "day": "Friday",
+      "work": [
+        { "task": "Client Demo Prep", "project": "Project Gamma", "hours": 3 },
+        { "task": "Code Refactor", "project": "Project Beta", "hours": 3 }
+      ]
+    },
+    {
+      "date": "2025-10-11",
+      "day": "Saturday",
+      "work": [
+        { "task": "Team Retrospective", "project": "Internal", "hours": 2 }
+      ]
+    },
+    {
+      "date": "2025-10-12",
+      "day": "Sunday",
+      "work": []
+    }
+  ]
+}
