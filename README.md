@@ -58,7 +58,7 @@ npm run mock-api
 4️⃣ **Start the React app**
 
 npm run dev 
-# OR use 'npm start' if configured with Create React App
+OR use 'npm start' if configured with Create React App
 
 ## 🔑 Authentication Flow
 User credentials are validated against mock users data in db.json.
