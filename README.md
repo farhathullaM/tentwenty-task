@@ -6,17 +6,18 @@ This project demonstrates API integration, reusable components, and form handlin
 
 🚀 Features
 
-🔐 Login System (with token storage & “Remember Me” option)
+🔐 Login System (with session storage)
 
 📅 Weekly Timesheet Overview (view, create, update entries)
 
-⏰ Timesheet Entries per day with work details
+⏰ Timesheet Entries per day with work details(modal only)
 
 🧩 Reusable UI Components built using ShadCN UI
 
 💾 Mock REST API powered by JSON Server
 
 🧠 Form Validation using Yup + React Hook Form
+
 
 | Technology               | Purpose                         |
 | ------------------------ | ------------------------------- |
@@ -65,6 +66,7 @@ npm install
 
 3️⃣ Start the mock API (JSON Server)
 npx json-server --watch data/db.json --port 5000
+npm run mock-api
 
 4️⃣ Start the React app
 npm run dev
@@ -74,7 +76,7 @@ npm run dev
 
 User credentials are validated against mock users data in db.json
 
-A token is generated (base64 encoded)
+A token is generated 
 
 Token and user data are stored in sessionStorage
 
@@ -119,15 +121,6 @@ Checkbox — ShadCN checkbox integrated with React Hook Form
 | `dateRangeOptions`            | Provides list of predefined date range options |
 
 
-🧑‍🏫 Future Improvements
-
-✅ Integrate NextAuth or JWT-based login
-
-✅ Connect with a real backend
-
-✅ Add role-based access (Admin/User)
-
-✅ Add dark mode using ShadCN Theme
 
 🧡 Author
 Farhathulla Menayath
