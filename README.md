@@ -101,8 +101,8 @@ Function,Description
 
 | Area                | Description                                                                                                                                                                    |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **API**             | JSON Server is used for the entire backend. All data operations (GET, POST, PUT, DELETE) are against the flat `db.json` file.                                                  |
-| **Security**        | Authentication is token-based but mock-level. The token is a simple Base64-encoded string and is stored in `sessionStorage` (not as secure as HTTP-only cookies).              |
+| **API**             | JSON Server is used for the entire backend. Data operations (GET) are against the flat `db.json` file.                                                  |
+| **Security**        | Authentication is token-based but mock-level. Stored in `sessionStorage` (not as secure as HTTP-only cookies).              |
 | **Timesheet Logic** | The weekly overview is filtered based on a hardcoded list of week ranges provided by the `dateRangeOptions` utility function, not a dynamic calculation of all available data. |
 | **UI/UX**           | Timesheet entries (the modal details) are only mock-integrated; the core focus was on the weekly overview and the login/form flow.                                             |
 
